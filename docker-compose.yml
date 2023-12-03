@@ -1,0 +1,20 @@
+---
+version: "3.8"
+services:
+  flaskapp:
+    build:
+      context: ./flask-app
+    image: josemcortesh/flask-app
+    deploy:
+      replicas: 3
+    ports:
+      - "5000"
+    depends_on:
+      - redis
+
+  redis:
+    build:
+      context: ./redis
+    image: josemcortesh/redis-jc
+    scale: 2
+...
