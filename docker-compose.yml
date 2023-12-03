@@ -5,8 +5,8 @@ services:
     build:
       context: ./flask-app
     image: josemcortesh/flask-app
-    deploy:
-      replicas: 3
+      #deploy:
+      #replicas: 3
     ports:
       - "5000"
     depends_on:
@@ -16,5 +16,4 @@ services:
     build:
       context: ./redis
     image: josemcortesh/redis-jc
-    scale: 2
 ...
